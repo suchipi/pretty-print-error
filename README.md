@@ -38,7 +38,7 @@ console.log(formatError(error));
 /*
   Logs:
 
-  Error uh oh!
+  Error: uh oh!
     at REPL2:1:9
     at Script.runInThisContext (node:vm:129:12)
     at REPLServer.defaultEval (node:repl:562:29)

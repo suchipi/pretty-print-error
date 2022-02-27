@@ -58,7 +58,7 @@ export function formatError(
 
     prettyErr =
       kleur.red(error.name) +
-      " " +
+      ": " +
       error.message.replace(new RegExp(`^${error.name}[: ]*`), "") +
       "\n" +
       (error.stack || "")
