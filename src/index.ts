@@ -31,6 +31,7 @@ export function formatError(
   err: unknown,
   {
     color = true,
+    lineFilter = (line) => !/\(node:/.test(line),
   }: {
     /**
      * Whether to use ANSI color escape sequences in the output string.
@@ -38,6 +39,15 @@ export function formatError(
      * This does nothing in the browser.
      */
     color?: boolean;
+
+    /**
+     * A function that determines whether a given stack trace line
+     * should be included in the formatted output.
+     *
+     * The default filter omits lines from node's internal functions.
+     * To override this behavior, pass `lineFilter: () => true`
+     */
+    lineFilter?: (line: string) => boolean;
   } = {}
 ): string {
   const kleur = color ? autoDetectedKleur : fakeKleur;
@@ -64,6 +74,7 @@ export function formatError(
       (error.stack || "")
         .split("\n")
         .map((line) => line.trim())
+        .filter(lineFilter)
         .map((line, index) => {
           if (index === 0) return null;
 
