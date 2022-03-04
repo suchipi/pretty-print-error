@@ -9,7 +9,7 @@ A little function that formats an error object as a nice, readable string. Works
 - Error name and stack are printed in color
 - Handles non-error inputs gracefully (accepts `unknown` in TypeScript)
 - Also prints any additional properties that were added to the Error object
-  - This is particularly nice when working with node's `fs` errors; the information about eg "which file couldn't be read" is sometimes in a property on the error, instead of in the error message.
+  - This is particularly nice when working with node's `fs` errors; node sometimes puts the information about eg "which file couldn't be read" is sometimes in a property on the error, rather than in the error message, so by printing additional properties, it's guaranteed to be visible.
 
 ## Example
 

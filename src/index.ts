@@ -13,10 +13,8 @@ const fakeKleur = {
 let autoDetectedKleur = fakeKleur;
 if (isNode) {
   // I use eval("require") here instead of just require,
-  // so that webpack et. al don't try to bundle util into
-  // browser stuff, since it won't be used even if it's
-  // bundled, and because most util shims for browsers
-  // are huge.
+  // so that webpack et. al don't try to bundle kleur into
+  // browser stuff, cause it's not very useful there.
   autoDetectedKleur = eval("require")("kleur");
 }
 
@@ -75,10 +73,14 @@ export function formatError(
         .split("\n")
         .map((line) => line.trim())
         .filter(lineFilter)
-        .map((line, index) => {
-          if (index === 0) return null;
+        .map((line) => {
+          if (line.startsWith(error.name + ": " + error.message)) return null;
 
-          return "  " + kleur.gray(line);
+          if (line.startsWith("at")) {
+            return "  " + kleur.gray(line);
+          }
+
+          return line;
         })
         .filter(Boolean)
         .join("\n");
@@ -105,7 +107,7 @@ export function formatError(
 
         propertiesString = util.inspect(props, {
           depth: Infinity,
-          colors: true,
+          colors: color,
         });
       } else {
         try {

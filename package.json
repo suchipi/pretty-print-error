@@ -7,6 +7,7 @@
   "unpkg": "./dist/index.min.js",
   "types": "./src/index.ts",
   "scripts": {
+    "test": "env FORCE_COLOR=1 vitest",
     "build": "kame bundle --global PrettyPrintError && terser ./dist/index.js -m eval=true -c -o ./dist/index.min.js"
   },
   "keywords": [
@@ -31,6 +32,8 @@
     "@types/jest": "^27.4.0",
     "@types/node": "^17.0.18",
     "kame": "^0.6.8",
-    "terser": "^5.10.0"
+    "terser": "^5.10.0",
+    "visualize-ansi-codes": "^1.0.0",
+    "vitest": "^0.5.9"
   }
 }
