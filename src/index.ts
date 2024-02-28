@@ -12,10 +12,28 @@ const fakeKleur = {
 };
 let autoDetectedKleur = fakeKleur;
 if (isNode) {
+  try {
+    // I use eval("require") here instead of just require,
+    // so that webpack et. al don't try to bundle kleur into
+    // browser stuff, cause it's not very useful there.
+    autoDetectedKleur = eval("require")("kleur");
+  } catch (err) {
+    // ignored
+  }
+}
+
+let util: any = {};
+if (isNode) {
   // I use eval("require") here instead of just require,
-  // so that webpack et. al don't try to bundle kleur into
-  // browser stuff, cause it's not very useful there.
-  autoDetectedKleur = eval("require")("kleur");
+  // so that webpack et. al don't try to bundle util into
+  // browser stuff, since it won't be used even if it's
+  // bundled, and because most util shims for browsers
+  // are huge.
+  try {
+    util = eval("require")("util");
+  } catch (err) {
+    // ignored
+  }
 }
 
 /**
@@ -97,14 +115,7 @@ export function formatError(
       });
 
       let propertiesString;
-      if (isNode) {
-        // I use eval("require") here instead of just require,
-        // so that webpack et. al don't try to bundle util into
-        // browser stuff, since it won't be used even if it's
-        // bundled, and because most util shims for browsers
-        // are huge.
-        const util = eval("require")("util");
-
+      if (typeof util.inspect === "function") {
         propertiesString = util.inspect(props, {
           depth: Infinity,
           colors: color,
