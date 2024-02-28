@@ -31,10 +31,10 @@ test("basic", () => {
     const result = formatError(err, { color: false });
     expect(clean(result)).toMatchInlineSnapshot(`
       "Error: Uh oh!
-        at one (<cwd>/src/index.test.ts:14:9)
-        at two (<cwd>/src/index.test.ts:17:3)
-        at three (<cwd>/src/index.test.ts:20:3)
-        at <cwd>/src/index.test.ts:24:5
+        at one (<cwd>/src/index.test.ts:17:9)
+        at two (<cwd>/src/index.test.ts:20:3)
+        at three (<cwd>/src/index.test.ts:23:3)
+        at <cwd>/src/index.test.ts:27:5
         at <cwd>/node_modules/vitest/dist/chunk-runtime-chain.2a787014.js:74:26
         at runTest (<cwd>/node_modules/vitest/dist/entry.js:1765:40)
         at async runSuite (<cwd>/node_modules/vitest/dist/entry.js:1829:13)
@@ -46,10 +46,10 @@ test("basic", () => {
     const result2 = formatError(err, { color: true });
     expect(clean(result2)).toMatchInlineSnapshot(`
       "<red>Error<resetColor>: Uh oh!
-        <dim>at one (<cwd>/src/index.test.ts:14:9)<resetColor>
-        <dim>at two (<cwd>/src/index.test.ts:17:3)<resetColor>
-        <dim>at three (<cwd>/src/index.test.ts:20:3)<resetColor>
-        <dim>at <cwd>/src/index.test.ts:24:5<resetColor>
+        <dim>at one (<cwd>/src/index.test.ts:17:9)<resetColor>
+        <dim>at two (<cwd>/src/index.test.ts:20:3)<resetColor>
+        <dim>at three (<cwd>/src/index.test.ts:23:3)<resetColor>
+        <dim>at <cwd>/src/index.test.ts:27:5<resetColor>
         <dim>at <cwd>/node_modules/vitest/dist/chunk-runtime-chain.2a787014.js:74:26<resetColor>
         <dim>at runTest (<cwd>/node_modules/vitest/dist/entry.js:1765:40)<resetColor>
         <dim>at async runSuite (<cwd>/node_modules/vitest/dist/entry.js:1829:13)<resetColor>
@@ -67,10 +67,10 @@ test("basic", () => {
     const result = formatError(err, { color: false });
     expect(clean(result)).toMatchInlineSnapshot(`
       "Error: Uh oh!
-        at one (<cwd>/src/index.test.ts:14:9)
-        at two (<cwd>/src/index.test.ts:17:3)
-        at three (<cwd>/src/index.test.ts:20:3)
-        at <cwd>/src/index.test.ts:58:5
+        at one (<cwd>/src/index.test.ts:17:9)
+        at two (<cwd>/src/index.test.ts:20:3)
+        at three (<cwd>/src/index.test.ts:23:3)
+        at <cwd>/src/index.test.ts:61:5
         at <cwd>/node_modules/vitest/dist/chunk-runtime-chain.2a787014.js:74:26
         at runTest (<cwd>/node_modules/vitest/dist/entry.js:1765:40)
         at async runSuite (<cwd>/node_modules/vitest/dist/entry.js:1829:13)
@@ -82,10 +82,10 @@ test("basic", () => {
     const result2 = formatError(err, { color: true });
     expect(clean(result2)).toMatchInlineSnapshot(`
       "<red>Error<resetColor>: Uh oh!
-        <dim>at one (<cwd>/src/index.test.ts:14:9)<resetColor>
-        <dim>at two (<cwd>/src/index.test.ts:17:3)<resetColor>
-        <dim>at three (<cwd>/src/index.test.ts:20:3)<resetColor>
-        <dim>at <cwd>/src/index.test.ts:58:5<resetColor>
+        <dim>at one (<cwd>/src/index.test.ts:17:9)<resetColor>
+        <dim>at two (<cwd>/src/index.test.ts:20:3)<resetColor>
+        <dim>at three (<cwd>/src/index.test.ts:23:3)<resetColor>
+        <dim>at <cwd>/src/index.test.ts:61:5<resetColor>
         <dim>at <cwd>/node_modules/vitest/dist/chunk-runtime-chain.2a787014.js:74:26<resetColor>
         <dim>at runTest (<cwd>/node_modules/vitest/dist/entry.js:1765:40)<resetColor>
         <dim>at async runSuite (<cwd>/node_modules/vitest/dist/entry.js:1829:13)<resetColor>
@@ -134,10 +134,10 @@ test("with additional properties", () => {
     const result = formatError(err, { color: false });
     expect(clean(result)).toMatchInlineSnapshot(`
       "Error: Uh oh!
-        at one (<cwd>/src/index.test.ts:14:9)
-        at two (<cwd>/src/index.test.ts:17:3)
-        at three (<cwd>/src/index.test.ts:20:3)
-        at <cwd>/src/index.test.ts:118:5
+        at one (<cwd>/src/index.test.ts:17:9)
+        at two (<cwd>/src/index.test.ts:20:3)
+        at three (<cwd>/src/index.test.ts:23:3)
+        at <cwd>/src/index.test.ts:121:5
         at <cwd>/node_modules/vitest/dist/chunk-runtime-chain.2a787014.js:74:26
         at runTest (<cwd>/node_modules/vitest/dist/entry.js:1765:40)
         at async runSuite (<cwd>/node_modules/vitest/dist/entry.js:1829:13)
@@ -151,10 +151,10 @@ test("with additional properties", () => {
     const result2 = formatError(err, { color: true });
     expect(clean(result2)).toMatchInlineSnapshot(`
       "<red>Error<resetColor>: Uh oh!
-        <dim>at one (<cwd>/src/index.test.ts:14:9)<resetColor>
-        <dim>at two (<cwd>/src/index.test.ts:17:3)<resetColor>
-        <dim>at three (<cwd>/src/index.test.ts:20:3)<resetColor>
-        <dim>at <cwd>/src/index.test.ts:118:5<resetColor>
+        <dim>at one (<cwd>/src/index.test.ts:17:9)<resetColor>
+        <dim>at two (<cwd>/src/index.test.ts:20:3)<resetColor>
+        <dim>at three (<cwd>/src/index.test.ts:23:3)<resetColor>
+        <dim>at <cwd>/src/index.test.ts:121:5<resetColor>
         <dim>at <cwd>/node_modules/vitest/dist/chunk-runtime-chain.2a787014.js:74:26<resetColor>
         <dim>at runTest (<cwd>/node_modules/vitest/dist/entry.js:1765:40)<resetColor>
         <dim>at async runSuite (<cwd>/node_modules/vitest/dist/entry.js:1829:13)<resetColor>
