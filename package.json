@@ -31,7 +31,7 @@
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "@types/node": "^17.0.18",
-    "kame": "^0.6.8",
+    "kame": "^2.1.0",
     "terser": "^5.10.0",
     "visualize-ansi-codes": "^1.0.0",
     "vitest": "^0.5.9"
